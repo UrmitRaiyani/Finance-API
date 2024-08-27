@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Investment = require('./investments');
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -34,7 +35,10 @@ const userSchema = new mongoose.Schema({
     hobbies: {
         type: [String],
         required:true
-    }
+    },
+    otp: { type: String },
+    otpExpires: { type: Date },
+    investments: [Investment.schema]
 },
 {
     timestamps: true
