@@ -16,5 +16,6 @@ router.post('/forgot-password',passport.authenticate('jwt',{failureRedirect:'/lo
 router.post('/reset-password',passport.authenticate('jwt',{failureRedirect:'/loginFailed'}), controller.resetPassword);
 router.post('/addInvestment',passport.authenticate('jwt',{failureRedirect:'/loginFailed'}), controller.addInvestment);
 router.get('/getInvestment/:id', passport.authenticate('jwt', {failureRedirect:'/loginFailed'}), controller.getInvestment);
-
+router.get('/investment-ledger',passport.authenticate('jwt', {failureRedirect:'/loginFailed'}), controller.getAllInvestmentLedger);
+router.put('/update-investment-ledger',passport.authenticate('jwt', {failureRedirect:'/loginFailed'}), controller.updateInvestmentLedger);
 module.exports = router;

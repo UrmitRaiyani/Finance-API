@@ -6,7 +6,8 @@ const InvestmentSchema = mongoose.Schema({
     startDate: { type: Date, required: true },
     expiryDate: { type: Date},
     status: { type: Boolean, default: false },
-    returnAmount: { type: Number }
+    returnAmount: { type: Number },
+    userId: { type: String , required: true}
 });
 
 module.exports = mongoose.model('Investment', InvestmentSchema);
